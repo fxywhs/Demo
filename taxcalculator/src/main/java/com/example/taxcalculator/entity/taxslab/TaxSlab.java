@@ -1,73 +1,51 @@
-package com.example.taxcalculator.entity;
+package com.example.taxcalculator.entity.taxslab;
+
+import java.util.List;
 
 public class TaxSlab {
 	
-	private Character category;
-	private Double chargeableIncomeBottom;
-	private Double chargeableIncomeTop;
-	private Double firstTierTop;
-	private Double firstTierTaxAmount;
-	private Double nextTierTop;
-	private Double taxRate;
+	private char category;
+	private ChargeableIncome chargeableIncome;
+	private List<TaxRate> rates;
 	
 	public TaxSlab() {
 		super();
 	}
 
-	public Character getCategory() {
+	public TaxSlab(char category, ChargeableIncome chargeableIncome, List<TaxRate> rates) {
+		super();
+		this.category = category;
+		this.chargeableIncome = chargeableIncome;
+		this.rates = rates;
+	}
+
+	public char getCategory() {
 		return category;
 	}
 	
-	public void setCategory(Character category) {
+	public void setCategory(char category) {
 		this.category = category;
-	}
+	}	
 	
-	public Double getChargeableIncomeBottom() {
-		return chargeableIncomeBottom;
+	public ChargeableIncome getChargeableIncome() {
+		return chargeableIncome;
 	}
-	
-	public void setChargeableIncomeBottom(Double chargeableIncomeBottom) {
-		this.chargeableIncomeBottom = chargeableIncomeBottom;
+
+	public void setChargeableIncome(ChargeableIncome chargeableIncome) {
+		this.chargeableIncome = chargeableIncome;
 	}
-	
-	public Double getChargeableIncomeTop() {
-		return chargeableIncomeTop;
+
+	public List<TaxRate> getRates() {
+		return rates;
 	}
-	
-	public void setChargeableIncomeTop(Double chargeableIncomeTop) {
-		this.chargeableIncomeTop = chargeableIncomeTop;
+
+	public void setRates(List<TaxRate> rates) {
+		this.rates = rates;
 	}
-	
-	public Double getFirstTierTop() {
-		return firstTierTop;
-	}
-	
-	public void setFirstTierTop(Double firstTierTop) {
-		this.firstTierTop = firstTierTop;
-	}
-	
-	public Double getFirstTierTaxAmount() {
-		return firstTierTaxAmount;
-	}
-	
-	public void setFirstTierTaxAmount(Double firstTierTaxAmount) {
-		this.firstTierTaxAmount = firstTierTaxAmount;
-	}
-	
-	public Double getNextTierTop() {
-		return nextTierTop;
-	}
-	
-	public void setNextTierTop(Double nextTierTop) {
-		this.nextTierTop = nextTierTop;
-	}
-	
-	public Double getTaxRate() {
-		return taxRate;
-	}
-	
-	public void setTaxRate(Double taxRate) {
-		this.taxRate = taxRate;
-	}
+
+	@Override
+	public String toString() {
+		return "TaxSlab [category=" + category + ", chargeableIncome=" + chargeableIncome + ", rates=" + rates + "]";
+	}	
 
 }
